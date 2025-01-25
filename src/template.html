@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>To-Do-List KD</title>
-</head>
-<body>
-    <main>
-        <div id="project-list">
-            <div id="profile">
-                <h1>Hello Kevin</h1>
-            </div>
-            <div id="project-function">
-                <h1>Project List</h1>
-                <button type="generic">Add Project</button>
-            </div>
-            <hr>
-            <div id="projects-container">
-                <div class="project" id="project1">
-                    <h3>Default project</h3>
-                    <button type="generic">delete</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do-List KD</title>
+    </head>
+    <body>
+        <main>
+            <div id="project-list">
+                <div id="profile">
+                    <h1>Hello Kevin</h1>
                 </div>
-
-            </div>
-        </div>
-        <div id="to-do">
-            <div id="to-do-nav">
-                <button type="generic">Add To-do item</button>
-                <button type="generic">Sort by date</button>
-                <button type="generic">Sort by priority</button>
-            </div>
-            <div id="to-do-items">
-                <div class="item" id="item1">
-
+                <div id="project-function">
+                    <h1>Project List</h1>
+                    <button type="generic" id="add-project">Add Project</button>
                 </div>
-                <div class="item" id="item2">
-
+                <hr>
+                <div id="projects-container">
+                    <div class="project" id="project1">
+                        <h3>Default project</h3>
+                        <button type="generic">delete</button>
+                    </div>
                 </div>
-                
             </div>
-        </div>
-    </main>
-</body>
+
+            <div id="to-do">
+                <div id="to-do-nav">
+                    <button type="generic">Add To-do item</button>
+                    <button type="generic">Sort by date</button>
+                    <button type="generic">Sort by priority</button>
+                </div>
+                <div id="to-do-items">
+                    <div class="item" id="item1">
+
+                    </div>
+                    <div class="item" id="item2">
+
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <dialog id="project-creator">
+            <form>
+                <label for="project-name">Project Name:</label>
+                <input id ="project-name" type="text">
+                <button type="generic" id="submit">Add</button>
+                <button type="generic" id="close" formmethod ="dialog">Close</button>
+            </form>
+        </dialog>
+    </body>
 </html>
