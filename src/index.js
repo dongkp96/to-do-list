@@ -1,16 +1,7 @@
 import "./styles.css";
+import {projectModal} from "./functions/modal.js";
 
-const createProjectDialog = document.querySelector("#project-creator");
-const addProjectBtn = document.querySelector("#add-project");
-addProjectBtn.addEventListener("click", ()=>{
-    createProjectDialog.showModal();
-})
-
-const closeProjectModal = document.querySelector("#close");
-closeProjectModal.addEventListener("click", ()=>{
-    createProjectDialog.close();
-})
-
+projectModal();
 const submitProjectBtn = document.querySelector("#submit");
 submitProjectBtn.addEventListener("click", ()=>{
     const element = document.querySelector("#project-name");

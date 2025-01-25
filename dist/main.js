@@ -110,13 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/functions/modal.js":
+/*!********************************!*\
+  !*** ./src/functions/modal.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   projectModal: () => (/* binding */ projectModal)\n/* harmony export */ });\nfunction projectModal(){\n    const createProjectDialog = document.querySelector(\"#project-creator\");\n    const addProjectBtn = document.querySelector(\"#add-project\");\n    addProjectBtn.addEventListener(\"click\", ()=>{\n        createProjectDialog.showModal();\n    })\n\n    const closeProjectModal = document.querySelector(\"#close\");\n    closeProjectModal.addEventListener(\"click\", ()=>{\n        createProjectDialog.close();\n    })\n}\n\n//# sourceURL=webpack:///./src/functions/modal.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\n\nconst createProjectDialog = document.querySelector(\"#project-creator\");\nconst addProjectBtn = document.querySelector(\"#add-project\");\naddProjectBtn.addEventListener(\"click\", ()=>{\n    createProjectDialog.showModal();\n})\n\nconst closeProjectModal = document.querySelector(\"#close\");\ncloseProjectModal.addEventListener(\"click\", ()=>{\n    createProjectDialog.close();\n})\n\nconst submitProjectBtn = document.querySelector(\"#submit\");\nsubmitProjectBtn.addEventListener(\"click\", ()=>{\n    const element = document.querySelector(\"#project-name\");\n    alert(element.value);\n})\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _functions_modal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/modal.js */ \"./src/functions/modal.js\");\n\n\n\n(0,_functions_modal_js__WEBPACK_IMPORTED_MODULE_1__.projectModal)();\nconst submitProjectBtn = document.querySelector(\"#submit\");\nsubmitProjectBtn.addEventListener(\"click\", ()=>{\n    const element = document.querySelector(\"#project-name\");\n    alert(element.value);\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
