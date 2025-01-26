@@ -7,6 +7,7 @@ export function projectModal(){
 
     const closeProjectModal = document.querySelector("#close");
     closeProjectModal.addEventListener("click", ()=>{
+        document.querySelector("#project-name").value = "";
         createProjectDialog.close();
     })
 }

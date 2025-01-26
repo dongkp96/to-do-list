@@ -18,10 +18,6 @@
                 </div>
                 <hr>
                 <div id="projects-container">
-                    <div class="project" id="project1">
-                        <h3>Default project</h3>
-                        <button type="generic">delete</button>
-                    </div>
                 </div>
             </div>
 
@@ -51,16 +47,22 @@
             <form>
                 <label for="project-name">Project Name:</label>
                 <input id ="project-name" type="text">
-                <button type="generic" id="submit">Add</button>
+                <button type="submit" id="submit">Add</button>
                 <button type="generic" id="close" formmethod ="dialog">Close</button>
             </form>
         </dialog>
+
         <dialog id="item-creator">
             <form>
-                <label for="task-name">Project Name:</label>
-                <input id ="task-name" type="text">
-                <label for="task-description">Project Name:</label>
-                <textarea name="description" id="task-description" cols="2" rows="2"></textarea>
+                <div>
+                    <label for="task-name">Project Name:</label>
+                    <input id ="task-name" type="text">
+                </div>
+                <div>
+                    <label for="task-description">Description:</label>
+                    <textarea name="description" id="task-description" cols="25" rows="3"></textarea>
+                </div>
+                <label for="task-priority">Priority</label>
                 <select name="priority" id="task-priority">
                     <option value="low">Low</option>
                     <option value="moderate">Moderate</option>
@@ -68,8 +70,10 @@
                 </select>
                 <label for="task-duedate">Due Date:</label>
                 <input id="task-duedate"type="date">
-                <button type="generic" id="submit-item">Add To-do item</button>
-                <button type="generic" formmethod ="dialog" id="close2"></button>
+                <div>
+                    <button type="generic" id="submit-item">Add To-do item</button>
+                    <button type="generic"  id="close2">Close</button>
+                </div>
             </form>
         </dialog>
     </body>
