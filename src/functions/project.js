@@ -35,15 +35,24 @@ export class project{
         this.todoList = [];
     }
 
+    addItem(todo){
+        this.todoList.push(todo);
+    }
+
+    get toDos(){
+        return this.todoList;
+    }
+
 }
 
-export function createProjectDom(projectName, IDnumber, list){
+export function createProjectDom(projectName, IDnumber){
     const projectsContainer = document.querySelector("#projects-container");
 
     const project = document.createElement("div");
     project.setAttribute("class", "project")
     const projectID = "project" + IDnumber;
     project.setAttribute("id", projectID);
+    project.setAttribute("tabindex", 0);
 
     const title = document.createElement("h3");
     title.textContent = projectName;

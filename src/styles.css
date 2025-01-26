@@ -101,7 +101,11 @@
     padding-top: 1rem;
     padding-left:1rem;
     padding-right:1rem;
+    display:flex; 
+    flex-direction:column;
+    gap:1rem;
   }
+  
   .project{
     display:flex;
     align-items:center;
@@ -111,6 +115,11 @@
     border-radius:15px;
     min-height:4rem;
   }
+
+  .project:focus{
+    background-color:lightgreen;
+  }
+
   #to-do{
     grid-column-start:2;
     grid-column-end:3;
@@ -141,4 +150,6 @@
     border-radius:15px;
     min-width:5rem;
     min-height:5rem;
+    text-align:center;
+    padding:1rem;
   }

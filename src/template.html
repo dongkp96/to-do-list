@@ -30,12 +30,15 @@
                 </div>
                 <div id="to-do-items">
                     <div class="item" id="item1">
-
-                    </div>
-                    <div class="item" id="item2">
-
-                    </div>
-                    
+                        <h3>Title</h3>
+                        <p>Description for the To-Do Item</p>
+                        <p>Priority level</p>
+                        <p>Due Date</p>
+                        <div class="item-buttons">
+                            <button type="generic" class="edit">Edit</button>
+                            <button type="generic" class="delete">Delete</button>
+                        </div>
+                    </div>     
                 </div>
             </div>
         </main>
@@ -72,7 +75,7 @@
                 <input id="task-duedate"type="date">
                 <div>
                     <button type="generic" id="submit-item">Add To-do item</button>
-                    <button type="generic"  id="close2">Close</button>
+                    <button type="generic" formmethod="dialog" id="close2">Close</button>
                 </div>
             </form>
         </dialog>
