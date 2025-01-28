@@ -116,10 +116,9 @@
     min-height:4rem;
   }
 
-  .project:focus{
+  .highlighted{
     background-color:lightgreen;
   }
-
   #to-do{
     grid-column-start:2;
     grid-column-end:3;

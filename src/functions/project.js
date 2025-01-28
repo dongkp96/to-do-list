@@ -23,10 +23,20 @@ export class projectList{
     checkForProject(project){
         for (let i = 0; i< this.list.length; i++){
             if(this.list[i].name === project){
-                return i+1;
+                return this.list[i].name;
             }
         }
     }
+
+    retrieveProject(project){
+        for (let i = 0; i< this.list.length; i++){
+            if(this.list[i].name === project){
+                alert(1);
+            }
+        }
+    }
+
+
 }
 
 export class project{

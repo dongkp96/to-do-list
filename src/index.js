@@ -1,8 +1,10 @@
 import "./styles.css";
 import {projectModal, itemModal} from "./functions/modal.js";
 import {projectList, project, createProjectDom} from "./functions/project.js"
+import {todoItem, createToDoDOM} from "./functions/todo.js";
 
 const list = new projectList;
+let currentProject; 
 
 projectModal();
 itemModal();
@@ -14,19 +16,38 @@ submitProjectBtn.addEventListener("click", (e)=>{
     const projectName = element.value;
 
     const newProject = new project(projectName);
+    currentProject = newProject;
     list.addProject(newProject);
     const IDnumber = list.projects.length;
     
     createProjectDom(projectName, IDnumber);
 
+    const projectCard = document.querySelector("#project"+ IDnumber);
+    projectCard.addEventListener("click", (e)=>{
+        if(document.querySelectorAll(".highlighted")){
+            const cards = document.querySelectorAll(".highlighted");
+            cards.forEach((card)=>{
+                card.classList.remove("highlighted");
+            })
+        }
+        e.target.classList.add("highlighted");
+        currentProject = newProject;
+        
+        /*Need to implement emptying of todo containers HTML and then 
+        generating todos based on the project's todo objects in its ToDoList */
+
+    })
+
+
     element.value = "";
     const createProjectDialog = document.querySelector("#project-creator");
     createProjectDialog.close();
 
+
 })
 
 const submitItemBtn = document.querySelector("#submit-item");
-submitItemBtn.addEventListener("click", (e)=>{localStorage
+submitItemBtn.addEventListener("click", (e)=>{
     e.preventDefault();
     const title = document.querySelector("#task-name").value;
 
@@ -34,7 +55,23 @@ submitItemBtn.addEventListener("click", (e)=>{localStorage
 
     const priority = document.querySelector("#task-priority").value;
 
-    /*const date = document.querySelector("#task-duedate");*/
+    const date = document.querySelector("#task-duedate").value;
+
+    const newToDo = new todoItem(title, description, priority, date);
+    if(currentProject ===""){
+        alert("No current project selected");
+    }else{
+        currentProject.addItem(newToDo);
+        alert(currentProject.toDos.length);
+    }
+
+    const itemId = "item1" ;
+
+    createToDoDOM(title, description, priority, date, itemId);
+
+
+    const itemCreatorDialog = document.querySelector("#item-creator");
+    itemCreatorDialog.close();
 
     
 })
