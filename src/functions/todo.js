@@ -6,6 +6,7 @@ export class todoItem{
         this.dueDate = dueDate;
     }
 
+
 }
 
 
@@ -38,12 +39,14 @@ export function createToDoDOM(title, description, priority, date, itemId){
     editBtn.textContent ="Edit";
     editBtn.setAttribute("type", "generic" );
     editBtn.setAttribute("class", "edit");
+    editBtn.classList.add(itemId);
     itemBtnHolder.appendChild(editBtn);
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.setAttribute("type", "generic");
     deleteBtn.setAttribute("class", "delete");
+    deleteBtn.classList.add(itemId);
     itemBtnHolder.appendChild(deleteBtn);
 
     todoCard.appendChild(itemBtnHolder);

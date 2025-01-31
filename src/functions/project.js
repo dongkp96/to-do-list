@@ -53,6 +53,14 @@ export class project{
         return this.todoList;
     }
 
+    removeItem(todo){
+        for (let i = 0; i< this.todoList.length; i++){
+            if (this.todoList[i]=== todo){
+                this.todoList.splice(i,1);
+            }
+        }
+    }
+
 }
 
 export function createProjectDom(projectName, IDnumber){
@@ -71,11 +79,21 @@ export function createProjectDom(projectName, IDnumber){
     deleteBtn.textContent = "Delete";
     deleteBtn.setAttribute("type", "generic");
     deleteBtn.setAttribute("class", projectID);
-    deleteBtn.addEventListener("click", (e)=>{
+    deleteBtn.addEventListener("click", (e) =>{
+        document.querySelector("#to-do-items").innerHTML = "";
         const removeID = "#" + e.target.className;
         const removedProject = document.querySelector(removeID);
         projectsContainer.removeChild(removedProject);
     })
+    /*
+    deleteBtn.addEventListener("mousedown", ()=>{
+        document.querySelector("#to-do-items").innerHTML = "";
+    })
+    deleteBtn.addEventListener("mouseup", (e)=>{
+        const removeID = "#" + e.target.className;
+        const removedProject = document.querySelector(removeID);
+        projectsContainer.removeChild(removedProject);
+    })*/
 
     project.appendChild(title);
     project.appendChild(deleteBtn);
